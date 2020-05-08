@@ -8,9 +8,12 @@
     <artifactId>taw.sample</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <!-- test -DsuiteXmlFiles=locationToTestSuite.xml -Dbrowser=${browser} -Denvironment=${environment} -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -->
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler>3.8.1</maven.compiler>
+        <maven.surefire>3.0.0-M4</maven.surefire>
         <testng.version>7.1.0</testng.version>
         <selenium.version>3.141.59</selenium.version>
         <taw.version>0.0.2</taw.version>
@@ -97,10 +100,22 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>${maven.compiler}</version>
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire}</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <!--suppress UnresolvedMavenProperty -->
+                        <suiteXmlFile>${suiteXmlFiles}</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
             </plugin>
         </plugins>
