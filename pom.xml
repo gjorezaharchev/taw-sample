@@ -16,11 +16,13 @@
         <maven.surefire>3.0.0-M4</maven.surefire>
         <testng.version>7.1.0</testng.version>
         <selenium.version>3.141.59</selenium.version>
-        <taw.version>0.0.5</taw.version>
+        <taw.version>0.0.16</taw.version>
         <poi.version>3.17</poi.version>
         <assertj.version>3.15.0</assertj.version>
         <rest-assured.version>4.3.0</rest-assured.version>
         <json.version>1.1.1</json.version>
+        <appium.version>7.3.0</appium.version>
+        <googleauth.version>1.4.0</googleauth.version>
     </properties>
 
     <repositories>
@@ -97,7 +99,13 @@
         <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
-            <version>7.3.0</version>
+            <version>${appium.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.warrenstrange</groupId>
+            <artifactId>googleauth</artifactId>
+            <version>${googleauth.version}</version>
         </dependency>
 
     </dependencies>
