@@ -1,5 +1,6 @@
 package com.taw.tests;
 
+import com.taw.objects.web.LoginPage;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -9,10 +10,10 @@ public class LoginTests extends BaseTest {
 
     @Test
     public void login_test_1(){
-        input.type(loginPage.username, $("USERNAME"));
-        input.type(loginPage.username, $("PASSWORD"));
-        button.click(loginPage.loginBtn);
-        assertThat(extract.elementValue(loginPage.errorMesage)).isEqualTo("Login Successfull!");
+        input.type(LoginPage.username, $("USERNAME"));
+        input.type(LoginPage.username, $("PASSWORD"));
+        button.click(LoginPage.loginBtn);
+        assertThat(extract.elementValue(LoginPage.errorMesage)).isEqualTo("Login Successfull!");
     }
 
     @DataProvider(name = "users")
@@ -22,10 +23,10 @@ public class LoginTests extends BaseTest {
 
     @Test(dataProvider = "users")
     public void login_test_2(String username, String password, String message){
-        input.type(loginPage.username, username);
-        input.type(loginPage.username, password);
-        button.click(loginPage.loginBtn);
-        assertThat(extract.elementValue(loginPage.errorMesage)).isEqualTo(message);
+        input.type(LoginPage.username, username);
+        input.type(LoginPage.username, password);
+        button.click(LoginPage.loginBtn);
+        assertThat(extract.elementValue(LoginPage.errorMesage)).isEqualTo(message);
     }
 
     @DataProvider(name = "users1")
@@ -35,9 +36,9 @@ public class LoginTests extends BaseTest {
 
     @Test(dataProvider = "users1")
     public void login_test_3(String username, String password, String message){
-        input.type(loginPage.username, username);
-        input.type(loginPage.username, password);
-        button.click(loginPage.loginBtn);
-        assertThat(extract.elementValue(loginPage.errorMesage)).isEqualTo(message);
+        input.type(LoginPage.username, username);
+        input.type(LoginPage.username, password);
+        button.click(LoginPage.loginBtn);
+        assertThat(extract.elementValue(LoginPage.errorMesage)).isEqualTo(message);
     }
 }
