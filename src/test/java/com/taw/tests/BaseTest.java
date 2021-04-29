@@ -11,11 +11,16 @@ public class BaseTest extends Actions {
     // vm options -Dbrowser=chrome -Denvironment=TEST
 
 
-    @BeforeMethod
+    @BeforeMethod(groups = {"smoketests", "logintests"})
     public void set_up(){
         browser.open();
         browser.maximize();
         navigate.to($("URL"));
+    }
+
+    @BeforeMethod(groups = {"sometest", "someother"})
+    public void set_up1(){
+        System.out.println("Beforesuite for specific groups");
     }
 
     @AfterMethod

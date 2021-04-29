@@ -21,7 +21,7 @@ public class LoginTests extends BaseTest {
         return dataSources.excel("src/test/resources/Data/Data.xlsx", "users");
     }
 
-    @Test(dataProvider = "users")
+    @Test(dataProvider = "users", groups = {"smoketests", "logintests"})
     public void login_test_2(String username, String password, String message){
         input.type(LoginPage.username, username);
         input.type(LoginPage.username, password);
