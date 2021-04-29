@@ -19,4 +19,10 @@
             <class name="com.taw.tests.AppTest"/>
         </classes>
     </test>
+
+    <test name="Regression2">
+        <classes>
+            <class name="com.taw.tests.AppTest"/>
+        </classes>
+    </test>
 </suite>
