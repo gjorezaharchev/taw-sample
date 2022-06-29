@@ -17,7 +17,7 @@
         <testng.version>7.1.0</testng.version>
         <selenium.version>3.141.59</selenium.version>
         <taw.version>0.0.16</taw.version>
-        <poi.version>3.17</poi.version>
+        <poi.version>4.1.1</poi.version>
         <assertj.version>3.15.0</assertj.version>
         <rest-assured.version>4.3.0</rest-assured.version>
         <json.version>1.1.1</json.version>
