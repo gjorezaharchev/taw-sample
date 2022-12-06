@@ -2,11 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.github.gjorezaharchev</groupId>
+        <artifactId>taw-parent</artifactId>
+        <version>0.0.3</version>
+    </parent>
 
+    <modelVersion>4.0.0</modelVersion>
     <groupId>com.taw.sample</groupId>
     <artifactId>taw.sample</artifactId>
     <version>1.0-SNAPSHOT</version>
+
 
     <!-- test -DsuiteXmlFiles=locationToTestSuite.xml -Dbrowser=${browser} -Denvironment=${environment} -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -->
     <properties>
@@ -14,15 +20,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler>3.8.1</maven.compiler>
         <maven.surefire>3.0.0-M4</maven.surefire>
-        <testng.version>7.1.0</testng.version>
-        <selenium.version>3.141.59</selenium.version>
-        <taw.version>0.0.16</taw.version>
-        <poi.version>3.17</poi.version>
-        <assertj.version>3.15.0</assertj.version>
-        <rest-assured.version>4.3.0</rest-assured.version>
-        <json.version>1.1.1</json.version>
-        <appium.version>7.3.0</appium.version>
-        <googleauth.version>1.4.0</googleauth.version>
+        <taw.version>0.0.21</taw.version>
     </properties>
 
     <repositories>
@@ -33,81 +31,11 @@
     </repositories>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>${testng.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-server</artifactId>
-            <version>${selenium.version}</version>
-        </dependency>
-
         <dependency>
             <groupId>com.github.gjorezaharchev</groupId>
             <artifactId>test-automation-wrapper</artifactId>
             <version>${taw.version}</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi</artifactId>
-            <version>${poi.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-            <version>${poi.version}</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
-        <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-            <version>${assertj.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>${rest-assured.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>json-path</artifactId>
-            <version>${rest-assured.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
-        <dependency>
-            <groupId>com.googlecode.json-simple</groupId>
-            <artifactId>json-simple</artifactId>
-            <version>${json.version}</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
-        <dependency>
-            <groupId>io.appium</groupId>
-            <artifactId>java-client</artifactId>
-            <version>${appium.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.warrenstrange</groupId>
-            <artifactId>googleauth</artifactId>
-            <version>${googleauth.version}</version>
-        </dependency>
-
     </dependencies>
 
     <build>
